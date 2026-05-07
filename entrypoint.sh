@@ -63,6 +63,10 @@ cmd_init() {
 }
 
 cmd_start() {
+  # Relay syslog (where pure-ftpd writes) to container stdout so logs are
+  # visible via kubectl logs.
+  syslogd -n -O - &
+
   set -- \
     -l "puredb:$PDB_FILE" \
     -u 1000 \

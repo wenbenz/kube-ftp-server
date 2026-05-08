@@ -1,11 +1,12 @@
 image:
-  repository: ghcr.io/wenbenz/pure-ftpd
+  repository: ghcr.io/wenbenz/kube-ftp-server
   tag: ""
   pullPolicy: IfNotPresent
 
 service:
+  type: LoadBalancer
   ports:
-    ftp: 30021
+    ftp: 21
     passive:
       min: 32100
       max: 32110

@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "pureftpd.labels" . | nindent 4 }}
 spec:
-  type: NodePort
+  type: {{ .Values.service.type }}
   selector:
     {{- include "pureftpd.selectorLabels" . | nindent 4 }}
   ports:

@@ -75,8 +75,7 @@ cmd_start() {
     -p "${PASV_MIN_PORT:-32100}:${PASV_MAX_PORT:-32110}" \
     -c "${MAX_CLIENTS:-10}" \
     -C "${MAX_PER_IP:-3}" \
-    -I 300 \
-    -T 120
+    -I 300
 
   [ -n "${PASV_ADDRESS:-}" ] && set -- "$@" -P "${PASV_ADDRESS}"
   [ -f /etc/ssl/private/pure-ftpd.pem ] && set -- "$@" -Y 1

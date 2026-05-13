@@ -3,6 +3,8 @@ image:
   tag: ""
   pullPolicy: IfNotPresent
 
+nodeSelector: {}
+
 service:
   type: LoadBalancer
   ports:
